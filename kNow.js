@@ -3,6 +3,7 @@ class kNow {
     this.persistentHandlers = {};
     this.dispatchWatchers = {};
     this.defaultNextTimeout = defaultNextTimeout ?? 2147483647
+    this.allowPromises = "Promise" in window
   }
   when(signalIdentifier, callback) {
     if (!(signalIdentifier in this.persistentHandlers)) {
@@ -33,6 +34,7 @@ class kNow {
     }
   }
   async next(dispatchIdentifier, timeout) {
+    if (!this.allowPromises) throw new Error("The current environment doesn't support promises; cannot attatch 'next'-style listener.")
     if (!this.dispatchWatchers[dispatchIdentifier]) this.dispatchWatchers[dispatchIdentifier] = []
     var rejectGeneratedPromise;
     var resolveGeneratedPromise;
