@@ -1,2 +1,2 @@
-![](./Assets/logo.svg)
+<img src="./Assets/logo.svg"></img>
 # kNow
