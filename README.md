@@ -13,4 +13,8 @@ Blazing-fast callback/promise-based events with a tiny footprint
   <img src="http://jpillora.com/github-twitter-button/img/tweet.png" title="A tiny event emitter that packs a punch."></img>
   </a>
 </p>
+
 ## What is this?
+Thanks to kNow (pronounced "*now*"), JavaScript event management has never been more intuitive—or lighter-weight. Want to add custom actions to the end of functions on-the-fly? To use awaitable timers to pause and resume execution at any time? To create large numbers of listeners without having to worry about performance degradation? Look no further than kNow.
+
+Originally conceived for use in [Membrane](https://github.com/Elijah-Bodden/Membrane), 
