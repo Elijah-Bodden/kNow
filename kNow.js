@@ -38,10 +38,10 @@ class kNow {
     if (!this.dispatchWatchers[dispatchIdentifier]) this.dispatchWatchers[dispatchIdentifier] = []
     var rejectGeneratedPromise;
     var resolveGeneratedPromise;
-    let index =
+    var index =
       this.dispatchWatchers[dispatchIdentifier].push({
         promise: new Promise((resolve, reject) => {
-          let spent = false
+          var spent = false
           resolveGeneratedPromise = async (resolution) => {
             if (spent) return;
             resolve(resolution);
