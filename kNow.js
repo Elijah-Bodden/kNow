@@ -60,15 +60,10 @@ class kNow {
       }) - 1;
     return await this.dispatchWatchers[dispatchIdentifier][index].promise;
   }
-  async flushExpectedDispatches() {
-    for (let i in this.dispatchWatchers) {
-      for (let j = 0; j < this.dispatchWatchers[i].length; j++) {
-        this.dispatchWatchers[i][j].resolve({
-          signalIdentifier: i,
-          externalDetail: "flushed",
-        });
-      }
-      delete this.dispatchWatchers[i];
+  clearNext(type, method) {
+    var flushFunction = (method === "resolve" || method === "reject") ? method==="resolve" ? this.dispatch : this.forceReject : this.dispatch
+    for (i in this.dispatchWatchers) {
+      flushFunction(i, "flushed")
     }
   }
 }
