@@ -13,3 +13,4 @@ Blazing-fast callback/promise-based events with a tiny footprint
   <img src="http://jpillora.com/github-twitter-button/img/tweet.png" title="A tiny event emitter that packs a punch."></img>
   </a>
 </p>
+## What is this?
