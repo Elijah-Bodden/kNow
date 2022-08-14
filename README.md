@@ -1,2 +1,2 @@
-<img src="./Assets/logo.svg" width="64" height="64"></img>
+<img src="./Assets/logo.svg" width="128" height="128"></img>
 # kNow
