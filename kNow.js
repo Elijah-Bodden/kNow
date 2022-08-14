@@ -1,73 +1,59 @@
-class eventHandlingMechanism {
-  constructor() {
-    this.handlerFrame = {};
+class kNow {
+  constructor(defaultNextTimeout) {
+    this.persistentHandlers = {};
     this.dispatchWatchers = {};
+    this.defaultNextTimeout = defaultNextTimeout ?? 2147483647
   }
-  onReciept(signalIdentifier, callback) {
-    if (!(signalIdentifier in this.handlerFrame)) {
-      this.handlerFrame[signalIdentifier] = [];
+  when(signalIdentifier, callback) {
+    if (!(signalIdentifier in this.persistentHandlers)) {
+      this.persistentHandlers[signalIdentifier] = [];
     }
-    this.handlerFrame[signalIdentifier].push(callback);
+    this.persistentHandlers[signalIdentifier].push(callback);
+  }
+  clearWhen(type) {
+    if (type) {
+      this.persistentHandlers[type] = [];
+      return;
+    }
+    this.persistentHandlers = {};
   }
   dispatch(signalIdentifier, externalDetail) {
-    if (this.handlerFrame[signalIdentifier]) {
-      this.handlerFrame[signalIdentifier].forEach((method) => {
-        method(
-          signalIdentifier,
-          externalDetail,
-          this.handlerFrame[signalIdentifier]
-        );
-      });
+    if (this.persistentHandlers[signalIdentifier]) {
+      this.persistentHandlers[signalIdentifier].forEach((method) => method(externalDetail));
     }
     if (this.dispatchWatchers[signalIdentifier]) {
-      this.dispatchWatchers[signalIdentifier].forEach((watcher) => {
-        watcher.resolve({
-          signalIdentifier: signalIdentifier,
-          externalDetail: externalDetail,
-        });
-      });
+      this.dispatchWatchers[signalIdentifier].forEach((watcher) => watcher.resolve({externalDetail: externalDetail, signalIdentifier}));
       delete this.dispatchWatchers[signalIdentifier];
     }
   }
   forceReject(signalIdentifier, reason) {
-    if (this.dispatchWatchers[signalIdentifier]) {
-      this.dispatchWatchers[signalIdentifier].forEach((watcher) => {
-        watcher.reject(reason);
-      });
+    if (!this.dispatchWatchers[signalIdentifier]) {
+      this.dispatchWatchers[signalIdentifier].forEach((watcher) => watcher.reject(reason));
       delete this.dispatchWatchers[signalIdentifier];
     }
   }
-  async acquireExpectedDispatch(dispatchIdentifier, timeout) {
-    this.dispatchWatchers[dispatchIdentifier] = this.dispatchWatchers[
-      dispatchIdentifier
-    ]
-      ? this.dispatchWatchers[dispatchIdentifier]
-      : [];
+  async next(dispatchIdentifier, timeout) {
+    if (!this.dispatchWatchers[dispatchIdentifier]) this.dispatchWatchers[dispatchIdentifier] = []
     var rejectGeneratedPromise;
     var resolveGeneratedPromise;
     let index =
       this.dispatchWatchers[dispatchIdentifier].push({
         promise: new Promise((resolve, reject) => {
-          let hasResolved = false;
-          let hasRejected = false;
+          let spent = false
           resolveGeneratedPromise = async (resolution) => {
-            if (hasRejected) return;
+            if (spent) return;
             resolve(resolution);
-            hasResolved = true;
+            spent = true;
           };
           rejectGeneratedPromise = async (rejection) => {
-            if (hasResolved) return;
+            if (spent) return;
             reject(rejection);
-            hasRejected = true;
+            spent = true;
           };
           setTimeout(() => {
-            if (!hasResolved)
-              reject(
-                `Dispatch listener promise for the identifier ${dispatchIdentifier} timed out after ${
-                  timeout ?? 100000
-                }ms`
-              );
-          }, timeout ?? 100000);
+            if (spent) return;
+            reject(`Listener timed out after ${timeout ?? this.defaultNextTimeout}ms`);
+          }, timeout ?? this.defaultNextTimeout);
         }),
         reject: rejectGeneratedPromise,
         resolve: resolveGeneratedPromise,
