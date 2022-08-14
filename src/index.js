@@ -81,3 +81,5 @@ class kNow {
 		}
 	}
 }
+
+export default kNow;
