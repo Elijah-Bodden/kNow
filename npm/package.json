@@ -1,0 +1,39 @@
+{
+  "name": "k-now",
+  "version": "1.0.0",
+  "description": "An ultra-lightweight multi-mode event emitter/handler",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettify": "prettier index.js --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elijah-Bodden/kNow.git"
+  },
+  "keywords": [
+    "emitter",
+    "event",
+    "handler",
+    "async",
+    "await",
+    "promise",
+    "callback",
+    "dispatch"
+  ],
+  "author": "Elijah Bodden",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Elijah-Bodden/kNow/issues"
+  },
+  "homepage": "https://github.com/Elijah-Bodden/kNow#readme",
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  },
+  "prettier": {
+    "insertPragma": true,
+    "useTabs": true,
+    "tabWidth": 4,
+    "printWidth": 110
+  }
+}
