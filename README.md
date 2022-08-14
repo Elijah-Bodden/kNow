@@ -1,2 +1,2 @@
-<img src="./Assets/logo.svg" style="max-width: 100px; max-height: 100px;"></img>
+<img src="./Assets/logo.svg" width="32" height="32"></img>
 # kNow
