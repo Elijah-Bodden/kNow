@@ -111,14 +111,12 @@ class kNow {
     return await this.dispatchWatchers[dispatchIdentifier][index].promise;
   }
   clearNext(type, method) {
-    var flushFunction =
-      method === "resolve" || method === "reject"
-        ? method === "resolve"
-          ? this.dispatch
-          : this.forceReject
-        : this.dispatch;
-    for (var i in this.dispatchWatchers) {
-      flushFunction(i, "flushed");
+    for (var i in type ? [type] : this.dispatchWatchers) {
+      if (method!=="reject") {
+        this.dispatch(i, "flushed");
+        return;
+      }
+      this.forceReject(i, "flushed")
     }
   }
 }
