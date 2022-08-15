@@ -21,7 +21,7 @@ With kNow (pronounced "*now*"), JavaScript event management has never been more 
 Originally developed for use in [Membrane](https://github.com/Elijah-Bodden/Membrane), kNow is a fully functional, if lightweight, event-management utility which I hope may be at least marginally useful elsewhere.
 
 ## Examples
-### Pause function execution for X miliseconds
+### Pause function execution for n miliseconds
 ```JavaScript
   const kNow = require("@elijah-bodden/know");
   const know = new kNow()
