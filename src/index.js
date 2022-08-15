@@ -17,25 +17,29 @@ class kNow {
       method: callback,
       instanceID
     });
-    return instanceID;
+    return {id : instanceID};
   }
-  clearWhen(type, ID) {
-    if (type) {
-      if (!this.persistentHandlers[type]) return;
-      if (type && ID) {
-        var implicatedIndex = this.persistentHandlers[type].reduce(
-          (last, entry, index) => (entry.instanceID === ID ? index : last),
-          null
-        );
-        if (implicatedIndex) {
-          this.persistentHandlers[type].splice(implicatedIndex, 1);
-        }
-        return;
-      }
-      this.persistentHandlers[type] = [];
+  clearWhen(clearParameter) {
+    if (!clearParameter) {
+      this.persistentHandlers = {};
       return;
     }
-    this.persistentHandlers = {};
+    if (typeof clearParameter == "object") {
+      if (!clearParameter.id) return;
+      var location = Object.keys(this.persistentHandlers).reduce(
+        (last, current, index) => {
+          var includedIndex = (this.persistentHandlers[current].reduce((last, entry, index) => entry.instanceID===clearParameter.id ? index : last), false)
+          return includedIndex!==false ? [current, includedIndex] : last
+        }
+        null
+      );
+      if (location) {
+        this.persistentHandlers[location[0]].splice(location[1], 1)
+      }
+      return
+    }
+    if (typeof clearParameter != "string" && typeof clearParameter != "number") return
+    this.persistentHandlers[clearParameter] = [];
   }
   dispatch(signalIdentifier, externalDetail) {
     if (this.persistentHandlers[signalIdentifier]) {
