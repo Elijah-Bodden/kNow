@@ -38,7 +38,7 @@ const kNow = require('@elijah-bodden/know')
 ```
 Then, to create a usable intance, add `const someVariable = new kNow()` anywhere, where 'someVariable' is the name you wish to access it by.
 ### HTML `script` tag
-#### Including
+#### Inclusion
 To include the script in your HTML, add the following tag to the top of your document:
 ```HTML
 <script src="https://cdn.jsdelivr.net/npm/@elijah-bodden/know@latest/index.min.js">
