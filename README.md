@@ -132,7 +132,6 @@ Use any of the following functions on a kNow instance to implement powerful, hig
 | **clearIn**() | Immediately `forceReject`s every promise created by `in` |
 
 # License
-kNow is distributed under the MIT license. See the `LICENSE` file for more information.
-
-#Contributing
+kNow is distributed under the MIT license. See the `LICENSE` file for more information.  
+# Contributing
 Any and all contributions are greatly appreciated. If you wish to see this project grow as much as I do, there are several ways to help. If you see something you think you can improve within the module, please `fork` the repository and make a `pull` request once you have made any changes you'd like to see. If you just have an idea, or spot a bug, that's great too! In this case, please file an `issue` with a corresponding `bug` or `enhancement` tag. Oh, and if you like what you see here, please feel free to leave a star on the project, it would mean a ton to me.
