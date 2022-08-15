@@ -63,7 +63,7 @@ Originally developed for use in [Membrane](https://github.com/Elijah-Bodden/Memb
 
   setTimeout(() => know.clearWhen(changeListener), 5000)
   /* Expected Output:
-    "Variable was changed to (some value)" *1 second pause* x 4
+    *1 second pause* "Variable was changed to (some value)" x 4
   */
 
 ```
