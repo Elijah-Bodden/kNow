@@ -74,14 +74,14 @@ Originally developed for use in [Membrane](https://github.com/Elijah-Bodden/Memb
 
   function unpredictableFunction() {
     for (let i = 0; i < 10000000; i++) {
-      //Do some valuable operations
+      //Doing some valuable operations
     }
     console.log("Alerting that task was completed.")
     know.dispatch("taskCompleted")
-    setTimeout(unpredictableFunction, Math.floor(Math.random()*10000)
+    setTimeout(unpredictableFunction, Math.floor(Math.random()*10000))
   }
   
-  setTimeout(unpredictableFunction, Math.floor(Math.random()*10000)
+  setTimeout(unpredictableFunction, Math.floor(Math.random()*10000))
   
   know.next("taskCompleted").then(() => console.log("Task completed!"))
   
