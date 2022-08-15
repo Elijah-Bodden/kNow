@@ -51,7 +51,7 @@ class kNow {
     }
   }
   forceReject(signalIdentifier, reason) {
-    if (!this.dispatchWatchers[signalIdentifier]) {
+    if (this.dispatchWatchers[signalIdentifier]) {
       this.dispatchWatchers[signalIdentifier].forEach((watcher) =>
         watcher.reject(reason)
       );
@@ -78,15 +78,7 @@ class kNow {
           };
           rejectGeneratedPromise = async (rejection) => {
             if (spent) return;
-            
-            //
-            //
-            
-            
             reject(rejection);
-            
-            ///
-            
             spent = true;
           };
           setTimeout(
@@ -110,14 +102,16 @@ class kNow {
       }) - 1;
     return await this.dispatchWatchers[dispatchIdentifier][index].promise;
   }
-  clearNext(type, method) {
-    for (var i of type ? [type] : Object.keys(this.dispatchWatchers)) {
-      if (method!=="reject") {
-        this.dispatch(i, "flushed");
-        return;
-      }
+  clearNext(...types) {
+    for (var i of types!="" ? types : Object.keys(this.dispatchWatchers)) {
       this.forceReject(i, "flushed")
     }
+  }
+  async in(interval) {
+    try {await this.next("&&IN_RESERVED_NEXT&&", interval)} catch {}
+  }
+  async clearIn() {
+    this.clearNext("&&IN_RESERVED_NEXT&&")
   }
 }
 
