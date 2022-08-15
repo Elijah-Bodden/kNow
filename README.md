@@ -25,6 +25,7 @@ Originally developed for use in [Membrane](https://github.com/Elijah-Bodden/Memb
 ```JavaScript
   const kNow = require("@elijah-bodden/know");
   const know = new kNow()
+  
   async function test() {
     console.log("foo")
     console.log("bar")
@@ -32,7 +33,9 @@ Originally developed for use in [Membrane](https://github.com/Elijah-Bodden/Memb
     await know.in(3000)
     console.log("baz")
   }
+  
   test()
+  
   /* Expected Output:
     1. "foo"
     2. "bar"
