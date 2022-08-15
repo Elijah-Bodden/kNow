@@ -113,4 +113,4 @@ class kNow {
 	}
 }
 
-module.exports = kNow;
+export default kNow;
