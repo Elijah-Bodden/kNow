@@ -111,7 +111,7 @@ class kNow {
     return await this.dispatchWatchers[dispatchIdentifier][index].promise;
   }
   clearNext(type, method) {
-    for (var i in type ? [type] : this.dispatchWatchers) {
+    for (var i of type ? [type] : Object.keys(this.dispatchWatchers)) {
       if (method!=="reject") {
         this.dispatch(i, "flushed");
         return;
