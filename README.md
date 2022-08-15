@@ -67,3 +67,21 @@ Originally developed for use in [Membrane](https://github.com/Elijah-Bodden/Memb
   */
 
 ```
+### Call function X next time Y completes
+```JavaScript
+  const kNow = require("@elijah-bodden/know");
+  const know = new kNow()
+
+  function unpredictableFunction() {
+    for (let i = 0; i < 10000000; i++) {
+      //Do some valuable operations
+    }
+    console.log("Alerting that task was completed.")
+    know.dispatch("taskCompleted")
+    setTimeout(unpredictableFunction, Math.floor(Math.random()*10000)
+  }
+  
+  setTimeout(unpredictableFunction, Math.floor(Math.random()*10000)
+  
+  know.next("taskCompleted").then(() => console.log("Task completed!"))
+```
