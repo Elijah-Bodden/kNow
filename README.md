@@ -46,7 +46,7 @@ To include the script in your HTML, add the following tag to the top of your doc
 #### Use in-script
 Just as with node, simply drop in `const someVariable = new kNow()` anywhere in your script, changing 'someVariable' to the name you want to reference the instance with.
 ## Examples
-### Pause function execution for n miliseconds
+### Pause function execution for n milliseconds
 ```JavaScript
   const kNow = require("@elijah-bodden/know");
   const know = new kNow()
@@ -116,3 +116,8 @@ Just as with node, simply drop in `const someVariable = new kNow()` anywhere in 
     2. "Task completed!"
   */
 ```
+
+# Methods
+Use any of the following functions on a kNow instance to implement powerful, high-speed event handling in a snap.
+## `(Constructor)(number)`
+When you first initialize kNow, you can optionally pass a single argument—the length of time, in milliseconds, after which each `next` listener automatically expires.
