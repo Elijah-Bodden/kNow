@@ -41,7 +41,7 @@ Then, to create a usable intance, add `const someVariable = new kNow()` anywhere
 #### Inclusion
 To include the script in your HTML, add the following tag to the top of your document:
 ```HTML
-<script src="https://cdn.jsdelivr.net/npm/@elijah-bodden/know@latest/index.min.js">
+<script src="https://cdn.jsdelivr.net/npm/@elijah-bodden/know/index.min.js">
 ```
 #### Use in-script
 Just as with node, simply drop in `const someVariable = new kNow()` anywhere in your script, changing 'someVariable' to the name you want to reference the instance with.
