@@ -119,5 +119,5 @@ Just as with node, simply drop in `const someVariable = new kNow()` anywhere in 
 
 # Methods
 Use any of the following functions on a kNow instance to implement powerful, high-speed event handling in a snap.
-## `(Constructor)(number)`
+## `Constructor(number)`
 When you first initialize kNow, you can optionally pass a single argument—the length of time, in milliseconds, after which each `next` listener automatically expires.
