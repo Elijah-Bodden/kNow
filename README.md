@@ -138,5 +138,6 @@ kNow is distributed under the MIT license. See the `LICENSE` file for more infor
 Any and all contributions are greatly appreciated. If you want to see this project grow as much as I do, there are several ways to help. Firstly, if you see something you think you can improve within the code, please `fork` the repository and make a `pull` request once you have made any changes you'd like to see. If you just have an idea, or spot a bug, that's great too! In this case, please file an `issue` with a corresponding `bug` or `enhancement` tag. Oh, and if you like what you see here, please feel free to leave a star on the project, it would mean a ton to me.
 
 ## Contact
-Elijah Bodden - elijahbodden@protonmail.com
-Project - https://github.com/Elijah-Bodden/kNow
+Elijah Bodden - elijahbodden@protonmail.com  
+Project - https://github.com/Elijah-Bodden/kNow  
+npm - https://www.npmjs.com/package/@elijah-bodden/know
