@@ -8,7 +8,7 @@ Blazing-fast callback/promise-based events with a tiny footprint
 <p align="center">
   <img src="https://img.shields.io/bundlephobia/minzip/@elijah-bodden/know?label=Minzipped%20size&style=flat-square"/>
   <img src="https://img.shields.io/github/license/Elijah-Bodden/kNow?style=flat-square"/>
-  <a href="https://www.npmjs.com/package/@elijah-bodden/know"><img src="https://img.shields.io/npm/dw/@elijah-bodden/know?label=NPM%20downloads&style=flat-square"/></a>
+  <a href="https://www.npmjs.com/package/@elijah-bodden/know"><img src="https://img.shields.io/npm/dw/@elijah-bodden/know?label=NPM%20downloads&style=flat-sqhttps://img.shields.io/npm/dw/@elijah-bodden/know?color=%23009eb0&label=NPM%20downloads&style=flat-squareuare"/></a>
   <img src="https://img.shields.io/maintenance/yes/2022?label=Maintained&style=flat-square"/>
   <a href="https://twitter.com/intent/tweet?text=A+tiny+event+emitter+that+packs+a+punch.&url=https%3A%2F%2Fgithub.com%2FElijah-Bodden%2FkNow&hashtags=javascript+js+opensource+javascriptdev+eventhandler+emitter+github&original_referer=http%3A%2F%2Fgithub.com%2F&tw_p=tweetbutton" target="_blank">
   <img src="http://jpillora.com/github-twitter-button/img/tweet.png" title="A tiny event emitter that packs a punch."></img>
