@@ -25,15 +25,15 @@ class kNow {
       return;
     }
     if (clearParameter.id) {
-      var location = Object.keys(this.persistentHandlers).reduce(
+      var loc = Object.keys(this.persistentHandlers).reduce(
         (last, current, index) => {
-          var includedIndex = (this.persistentHandlers[current].reduce((last, entry, index) => entry.instanceID===clearParameter.id ? index : last), false)
+          var includedIndex = (this.persistentHandlers[current].reduce((last, entry, index) => entry.instanceID===clearParameter.id ? index : last, false))
           return includedIndex!==false ? [current, includedIndex] : last
         },
         null
       );
-      if (location) {
-        this.persistentHandlers[location[0]].splice(location[1], 1)
+      if (loc) {
+        this.persistentHandlers[loc[0]].splice(loc[1], 1)
       }
       return
     }
