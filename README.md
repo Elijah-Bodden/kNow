@@ -84,4 +84,10 @@ Originally developed for use in [Membrane](https://github.com/Elijah-Bodden/Memb
   setTimeout(unpredictableFunction, Math.floor(Math.random()*10000)
   
   know.next("taskCompleted").then(() => console.log("Task completed!"))
+  
+  /* Expected Output:
+    *Indefinite pause*
+    1. "Alerting that task was completed."
+    2. "Task completed!"
+  */
 ```
