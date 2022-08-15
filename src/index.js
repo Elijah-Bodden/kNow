@@ -115,4 +115,4 @@ class kNow {
   }
 }
 
-window.kNow = kNow;
+export default kNow;
