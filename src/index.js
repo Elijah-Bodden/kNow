@@ -24,8 +24,7 @@ class kNow {
       this.persistentHandlers = {};
       return;
     }
-    if (typeof clearParameter == "object") {
-      if (!clearParameter.id) return;
+    if (clearParameter.id) {
       var location = Object.keys(this.persistentHandlers).reduce(
         (last, current, index) => {
           var includedIndex = (this.persistentHandlers[current].reduce((last, entry, index) => entry.instanceID===clearParameter.id ? index : last), false)
