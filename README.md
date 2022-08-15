@@ -61,9 +61,9 @@ Originally developed for use in [Membrane](https://github.com/Elijah-Bodden/Memb
   //Listener callbacks can be created and destroyed at any time, on-the-fly.
   const changeListener = know.when("variableChanged", (newVal) => console.log(`Variable "variable" was changed to ${newVal}.`))
 
-  setTimeout(() => know.clearWhen(changeListener), 5001)
+  setTimeout(() => know.clearWhen(changeListener), 5000)
   /* Expected Output:
-    "Variable was changed to (some value)" *1 second pause* x 5
+    "Variable was changed to (some value)" *1 second pause* x 4
   */
 
 ```
