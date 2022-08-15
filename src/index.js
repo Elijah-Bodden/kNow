@@ -30,7 +30,7 @@ class kNow {
         (last, current, index) => {
           var includedIndex = (this.persistentHandlers[current].reduce((last, entry, index) => entry.instanceID===clearParameter.id ? index : last), false)
           return includedIndex!==false ? [current, includedIndex] : last
-        }
+        },
         null
       );
       if (location) {
