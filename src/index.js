@@ -1,4 +1,5 @@
 /** @format */
+"use strict"
 
 class kNow {
 	constructor(defaultNextTimeout) {
@@ -11,10 +12,23 @@ class kNow {
 		if (!(signalIdentifier in this.persistentHandlers)) {
 			this.persistentHandlers[signalIdentifier] = [];
 		}
-		this.persistentHandlers[signalIdentifier].push(callback);
+		var instanceID = math.random().toString().slice(2);
+		this.persistentHandlers[signalIdentifier].push({
+			method : callback,
+			instanceID
+		});
+		return instanceID;
 	}
-	clearWhen(type) {
+	clearWhen(type, ID) {
 		if (type) {
+			if (!this.persistentHandlers[type]) return;
+			if (type && ID) {
+				var implicatedIndex = this.persistentHandlers[type].reduce((last, entry, index) => return entry.instanceID === id ? index : last, null);
+				if (implicatedIndex) {
+					this.persistentHandlers[type].splice(index, 1);
+				}
+				return;
+			}
 			this.persistentHandlers[type] = [];
 			return;
 		}
@@ -22,7 +36,7 @@ class kNow {
 	}
 	dispatch(signalIdentifier, externalDetail) {
 		if (this.persistentHandlers[signalIdentifier]) {
-			this.persistentHandlers[signalIdentifier].forEach((method) => method(externalDetail));
+			this.persistentHandlers[signalIdentifier].forEach((member) => method(externalDetail));
 		}
 		if (this.dispatchWatchers[signalIdentifier]) {
 			this.dispatchWatchers[signalIdentifier].forEach((watcher) =>
