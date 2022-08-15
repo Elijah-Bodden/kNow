@@ -117,7 +117,7 @@ Just as with node, simply drop in `const someVariable = new kNow()` anywhere in 
   */
 ```
 
-# Methods
+## Methods
 Use any of the following functions on a kNow instance to implement powerful, high-speed event handling in a snap.
 | Command | Description |
 | --- | --- |
@@ -131,7 +131,7 @@ Use any of the following functions on a kNow instance to implement powerful, hig
 | **in**(number) | Returns a promise which will resolve to `undefined` in the specified number of milliseconds. |
 | **clearIn**() | Immediately `forceReject`s every promise created by `in` |
 
-# License
+## License
 kNow is distributed under the MIT license. See the `LICENSE` file for more information.  
-# Contributing
+## Contributing
 Any and all contributions are greatly appreciated. If you want to see this project grow as much as I do, there are several ways to help. Firstly, if you see something you think you can improve within the code, please `fork` the repository and make a `pull` request once you have made any changes you'd like to see. If you just have an idea, or spot a bug, that's great too! In this case, please file an `issue` with a corresponding `bug` or `enhancement` tag. Oh, and if you like what you see here, please feel free to leave a star on the project, it would mean a ton to me.
