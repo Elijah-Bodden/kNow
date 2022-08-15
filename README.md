@@ -91,9 +91,3 @@ Originally developed for use in [Membrane](https://github.com/Elijah-Bodden/Memb
     2. "Task completed!"
   */
 ```
-### See if events coincide
-```JavaScript
-  const kNow = require("@elijah-bodden/know");
-  const know = new kNow()
-    
-```
