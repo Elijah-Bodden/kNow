@@ -6,7 +6,7 @@ class kNow {
 		this.dispatchWatchers = {};
 		this.defaultNextTimeout =
 			defaultNextTimeout !== undefined && defaultNextTimeout !== null ? defaultNextTimeout : 2147483647;
-		this.allowPromises = "Promise" in window;
+		this.allowPromises = !!Promise;
 	}
 	when(signalIdentifier, callback) {
 		if (!(signalIdentifier in this.persistentHandlers)) {
@@ -113,4 +113,8 @@ class kNow {
 	}
 }
 
-export default kNow;
+if (typeof process === "object") {
+	module.exports = kNow;
+} else {
+	window.kNow = kNow;
+}
