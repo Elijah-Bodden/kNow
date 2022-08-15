@@ -1,6 +1,6 @@
 <h1 align="center">
   <img src="./Assets/logo.svg" width="128" height="128"></img><br>
-  <p>k</p>Now
+  <p >k</p>Now
 </h1>
 <p align="center">
 Blazing-fast callback/promise-based events with a tiny footprint
@@ -15,7 +15,7 @@ Blazing-fast callback/promise-based events with a tiny footprint
 </p>
 
 ## What is this?
-With kNow (pronounced "*now*"), JavaScript event management has never been more intuitive—or lighter-weight. Want to append custom actions to functions on-the-fly? To use awaitable timers to pause and resume execution at any time? To create large numbers of listeners without worrying about performance degradation? If so, then you want kNow.
+With kNow (pronounced "*now*"), JavaScript event management has never been more intuitive—or lighter-weight. Want to append custom actions to functions on-the-fly? To use awaitable timers to pause and resume execution at any time? To create large numbers of listeners without worrying about performance degradation? If so, you want kNow.
 
 Originally developed for use in [Membrane](https://github.com/Elijah-Bodden/Membrane), kNow is a fully functional, if lightweight, event-management utility which I hope may be at least marginally useful elsewhere.
 
