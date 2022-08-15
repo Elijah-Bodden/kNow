@@ -43,6 +43,8 @@ To include the script in your HTML, add the following tag to the top of your doc
 ```HTML
 <script src="https://cdn.jsdelivr.net/npm/@elijah-bodden/know@latest/index.min.js">
 ```
+#### Use in-script
+Just as with node, simply drop in `const someVariable = new kNow()` anywhere in your script, changing 'someVariable' to the name you want to reference the instance with.
 ## Examples
 ### Pause function execution for n miliseconds
 ```JavaScript
