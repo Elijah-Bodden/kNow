@@ -6,7 +6,7 @@
 Blazing-fast callback/promise-based events with a tiny footprint
 </p>
 <p align="center">
-  <img src="https://img.shields.io/bundlephobia/minzip/@elijah-bodden/know?label=Minzipped%20size&style=flat-square"/>
+  <img src="https://img.shields.io/bundlephobia/minzip/@elijah-bodden/know/latest?label=Minzipped%20size&style=flat-square"/>
   <img src="https://img.shields.io/github/license/Elijah-Bodden/kNow?style=flat-square"/>
   <a href="https://www.npmjs.com/package/@elijah-bodden/know"><img src="https://img.shields.io/npm/dw/@elijah-bodden/know?color=%23009eb0&label=NPM%20downloads&style=flat-square"/></a>
   <img src="https://img.shields.io/maintenance/yes/2022?label=Maintained&style=flat-square"/>
