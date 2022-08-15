@@ -20,6 +20,29 @@ With kNow (pronounced "*now*"), JavaScript event management has never been more 
 
 Originally developed for use in [Membrane](https://github.com/Elijah-Bodden/Membrane), kNow is a fully functional, if lightweight, native event-management utility for many other use-cases.
 
+## Getting Started
+### Node.js + npm
+#### Installation:
+To install in the root of your node project:
+```bash
+npm i @elijah-bodden/know
+```
+Or else globally:
+```bash
+npm i @elijah-bodden/know -g
+```
+#### Use in-script
+To import the module into your node script, simply paste the following line at the very top:
+```JavaScript
+const kNow = require('@elijah-bodden/know')
+```
+Then, to create a usable intance, add `const someVariable = new kNow()` anywhere, where 'someVariable' is the name you wish to access it by.
+### HTML `script` tag
+#### Including
+To include the script in your HTML, add the following tag to the top of your document:
+```HTML
+<script src="https://cdn.jsdelivr.net/npm/@elijah-bodden/know@latest/index.min.js">
+```
 ## Examples
 ### Pause function execution for n miliseconds
 ```JavaScript
