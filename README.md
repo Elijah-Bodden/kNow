@@ -1,6 +1,6 @@
 <h1 align="center">
   <img src="./Assets/logo.svg" width="128" height="128"></img><br>
-  kNow
+  <h2>k</h2>Now
 </h1>
 <p align="center">
 Blazing-fast callback/promise-based events with a tiny footprint
