@@ -56,7 +56,7 @@ Originally developed for use in [Membrane](https://github.com/Elijah-Bodden/Memb
     know.dispatch("variableChanged", variable)
   }
   
-  setInterval(() => setVaraible(Math.random()), 1000)
+  setInterval(() => setVariable(Math.random()), 1000)
   
   //Listener callbacks can be created and destroyed at any time, on-the-fly.
   const changeListener = know.when("variableChanged", (newVal) => console.log(`Variable "variable" was changed to ${newVal}.`))
