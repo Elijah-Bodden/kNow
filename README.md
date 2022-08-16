@@ -18,7 +18,7 @@ Blazing-fast callback/promise-based events with a tiny footprint
 ## What is this?
 With kNow (pronounced "*now*"—the k's silent), JavaScript event management has never been more intuitive—or lighter-weight. Want to append custom actions to functions on-the-fly? To use awaitable timers to pause and resume execution at any time? To create large numbers of listeners without worrying about performance degradation? If so, you want kNow.  
 | <img src="./Assets/jsben.ch.jpg"/> |
-| --- |
+|:--:|
 | <p align="center"><i>Via https://jsben.ch/ZESbj</i></p> |  
 
 Originally developed for use in [Membrane](https://github.com/Elijah-Bodden/Membrane), kNow is a fully functional, if lightweight, native event-management utility for any use-case.
